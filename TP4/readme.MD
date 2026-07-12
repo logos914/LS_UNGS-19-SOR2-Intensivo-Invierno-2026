@@ -175,6 +175,11 @@ sudo apt-get install php libapache2-mod-php php-mysql -y
 Resultado de la ejecución: [3-2-3-1.txt](capturas/3/3-2-3-1.txt)
 
 ### 3.2.4 Prueba de PHP
+
 Se crea un archivo info.php dentro del vhost de empresa 1
 
 ![3-2-4-1.jpg](capturas/3/3-2-4-1.jpg)
+
+Se accede satisfactoriamente mediante el navegador web y PHP es funcional
+
+![3-2-4-2.jpg](capturas/3/3-2-4-2.jpg)
