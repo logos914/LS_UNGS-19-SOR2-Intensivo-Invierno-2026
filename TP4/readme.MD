@@ -341,8 +341,6 @@ Nos topamos con un error, al observar los logs que reporta systemd, observamos q
 
 # 3.4.4 Resolución del problema con la directiva Header
 
-Se resolvió la problemática habilitando el módulo Header de Apache.
-
 Mostramos el contenido de la configuración del vhost, y notamos que no funciona. Luego habilitamos el módulo, y luego el servicio inició correctamente
 
 ```bash
@@ -353,20 +351,19 @@ sudo a2enmod headers
 sudo systemctl restart apache2
 ```
 
+Se resolvió la problemática habilitando el módulo Header de Apache.
+
 Resultado de la ejecución: [3-4-4-1.txt](capturas/3/3-4-4-1.txt)
 
+### 3.4.5 Acceso al Sitio Web
 
+![](capturas/3/3-4-5-2.jpg)
 
+Si bien es posible acceder mediante protocolo https al sitio web, los navegadores aún indican que no es seguro (no porque la comunicación no esté encriptada), sino porque no pueden confirmar que los certificados vengan de una fuente confiable (porque los autofirmamos)
 
+![](capturas/3/3-4-5-1.jpg)
 
+# SECCIÓN 4 - Autoridades Certificadoras y Autenticación SSL
 
-
-
-
-
-
-
-
-
-
+## 4.1 Creación de una Autoridad Certificadora (CA) y Certificación de Llaves
 
