@@ -1,0 +1,21 @@
+Script started on 2026-07-12 13:10:03-03:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="169" LINES="36"]
+
+ 
+ >>> alumno@alumno-virtualbox: /var/www/empresa2.com/public_html
+alumno@alumno-virtualbox:/var/www/empresa2.com/public_html$ pdwd
+/var/www/empresa2.com/public_html
+
+ 
+ >>> alumno@alumno-virtualbox: /var/www/empresa2.com/public_html
+alumno@alumno-virtualbox:/var/www/empresa2.com/public_html$ touch wp-config.php
+
+ 
+ >>> alumno@alumno-virtualbox: /var/www/empresa2.com/public_html
+alumno@alumno-virtualbox:/var/www/empresa2.com/public_html$ nano wp-config.php
+>
+ 
+ >>> alumno@alumno-virtualbox: /var/www/empresa2.com/public_html                                                                                                              S Sí                             
+alumno@alumno-virtualbox:/var/www/empresa2.com/public_html$ exit
+exit
+
+Script done on 2026-07-12 13:10:42-03:00 [COMMAND_EXIT_CODE="0"]

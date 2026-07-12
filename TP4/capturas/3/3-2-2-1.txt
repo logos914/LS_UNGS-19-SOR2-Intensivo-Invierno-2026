@@ -28,7 +28,7 @@ CREATE USER 'usuariotest'@'localhost' IDENTIFIED BY 'password';
 r'
 ERROR 1819 (HY000): Your password does not satisfy the current policy requirements
 
-!'EATE USER 'usuariotest'@'localhost' IDENTIFIED BY 'NiInt3nt3sEntr4r'
+!'EATE USER 'usuariotest'@'localhost' IDENTIFIED BY 'NiInt3nt3sEntr4r!'
 Query OK, 0 rows affected (0,00 sec)
 
 mysql> GRANT ALL PRIVILEGES ON dbprueba.* TO 'usuariotest'@'localhost';

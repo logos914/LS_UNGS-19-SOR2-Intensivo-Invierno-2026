@@ -187,19 +187,62 @@ Se accede satisfactoriamente mediante el navegador web y PHP es funcional
 
 ## 3.3 Tercera Parte: Instalación de un CMS (WordPress)
 
-### 3.3.1 Descarga e instalación
+### 3.3.1 Descarga
 
-Se procede a seguir las instrucciones de la [documentación oficial](https://developer.wordpress.org/advanced-administration/before-install/howto-install/)
+Se procede a seguir las instrucciones de la [documentación oficial](https://developer.wordpress.org/advanced-administration/before-install/howto-install/) de Wordpress.
 
 Ubicados en `/var/www/empresa2.com/public_html`
 
+```bash
 wget https://wordpress.org/latest.tar.gz
 tar -xzvf latest.tar.gz
-
+cp wordpress/* -r  # Porque queremos la instalación en la raíz 
+                   # y no en la carpeta wordpress
+rm -R wordpress/   # Luego borramos la carpeta                   
+```
 
 Resultado de la ejecución: [3-3-1-1.txt](capturas/3/3-3-1-1.txt)
 
 
+Cambiamos el `index.html` a otro nombre para que PHP trabaje con el `index.php` de Wordpress
+
+ ![3-3-1-2.jpg](capturas/3/3-3-1-2.jpg)
+
+
+### 3.3.2 Instalalación
+
+Ya podemos ingresar a https://empresa2.com. Lo que nos redirecciona al instalador web. Lo que significa que index.php está funcionando.
+![3-3-2-1.jpg](capturas/3/3-3-2-1.jpg)
+
+Comenzamos la instalación e ingresamos los datos de conexión a la base de datos previamente creada
+
+![3-3-2-2.jpg](capturas/3/3-3-2-2.jpg)
+
+Obtenemos el contenido de `wp-config.php`
+
+![3-3-2-3.jpg](capturas/3/3-3-2-3.jpg)
+
+Colocamos su contenido en la raiz del virtual host de empresa2
+
+```bash
+cd /var/www/empresa2.com/public_html
+touch wp-config.php
+nano wp-config.php
+```
+
+Resultado de la ejecución: [3-3-2-4.txt](capturas/3/3-3-2-4.txt)
+
+Creamos nuestro primer usuario en Wordpress
+
+![3-3-2-5.jpg](capturas/3/3-3-2-5.jpg)
+
+Finalizamos el asistente
+
+ ![3-3-2-6.jpg](capturas/3/3-3-2-6.jpg)
+
+ Ya tenemos Wordpress completamente funcional
+ 
+ ![3-3-2-7.jpg](capturas/3/3-3-2-7.jpg)
 
 
 
