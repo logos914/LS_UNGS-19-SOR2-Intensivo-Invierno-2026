@@ -1,5 +1,8 @@
 Script started on 2026-07-12 15:30:18-03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="169" LINES="36"]
-]0;alumno@alumno-virtualbox: ~/sor2/TP4/capturas/3[01;32malumno@alumno-virtualbox[00m:[01;34m~/sor2/TP4/capturas/3[00m$ exitnano wp-config.php[1@touch[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pnano[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[K[Ksudo openssl req -x509 -newkey rsa:2048 -keyout /etc/ssl/private/selfsigned.key \
+
+ 
+ >>> alumno@alumno-virtualbox: ~/sor2/TP4/capturas/3
+alumno@alumno-virtualbox:~/sor2/TP4/capturas/3$ exinano wp-config.phtouchnanoexitsudo openssl req -x509 -newkey rsa:2048 -keyout /etc/ssl/private/selfsigned.key \
 > -out /etc/ssl/certs/selfsigned.crt -days 365 -nodes
 [sudo] contraseña para alumno: 
 Generating a RSA private key
@@ -15,57 +18,86 @@ For some fields there will be a default value,
 If you enter '.', the field will be left blank.
 -----
 Country Name (2 letter code) [AU]:AR
-State or Province Name (full name) [Some-State]:Bueo nos Aires^[[D^[[D^[[D            
+State or Province Name (full name) [Some-State]:Buenos Aires^[[D^[[D^[[
 Locality Name (eg, city) []:Los Polvorines
 Organization Name (eg, company) [Internet Widgits Pty Ltd]:Grupo 5
 Organizational Unit Name (eg, section) []:
 Common Name (e.g. server FQDN or YOUR name) []:secure-example.com
 Email Address []:grupo5@falsa.com
-]0;alumno@alumno-virtualbox: ~/sor2/TP4/capturas/3[01;32malumno@alumno-virtualbox[00m:[01;34m~/sor2/TP4/capturas/3[00m$ sudo systemctl restart apache2
+
+ 
+ >>> alumno@alumno-virtualbox: ~/sor2/TP4/capturas/3
+alumno@alumno-virtualbox:~/sor2/TP4/capturas/3$ sudo systemctl restart apache2
 Job for apache2.service failed because the control process exited with error code.
 See "systemctl status apache2.service" and "journalctl -xe" for details.
-]0;alumno@alumno-virtualbox: ~/sor2/TP4/capturas/3[01;32malumno@alumno-virtualbox[00m:[01;34m~/sor2/TP4/capturas/3[00m$ clear
-[H[2J[3J]0;alumno@alumno-virtualbox: ~/sor2/TP4/capturas/3[01;32malumno@alumno-virtualbox[00m:[01;34m~/sor2/TP4/capturas/3[00m$ systemctl status apache2.service
-[?1h=[0;1;31m●[0m apache2.service - The Apache HTTP Server[m
-     Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor preset: enabled)[m
-     Active: [0;1;31mfailed[0m (Result: exit-code) since Sun 2026-07-12 15:31:39 -03; 27s ago[m
-       Docs: https://httpd.apache.org/docs/2.4/[m
-    Process: 13585 ExecStart=/usr/sbin/apachectl start [0;1;31m(code=exited, status=1/FAILURE)[0m[m
-[m
-jul 12 15:31:39 alumno-virtualbox systemd[1]: Starting The Apache HTTP Server...[m
-jul 12 15:31:39 alumno-virtualbox apachectl[13596]: AH00526: Syntax error on line 9 of /etc/apache2/sites-enabled/secure-site.conf:[m
-jul 12 15:31:39 alumno-virtualbox apachectl[13596]: Invalid command 'Header', perhaps misspelled or defined by a module not included in the server configuration[m
-jul 12 15:31:39 alumno-virtualbox apachectl[13585]: Action 'start' failed.[m
-jul 12 15:31:39 alumno-virtualbox apachectl[13585]: The Apache error log may have more information.[m
-jul 12 15:31:39 alumno-virtualbox systemd[1]: [0;1;39m[0;1;31m[0;1;39mapache2.service: Control process exited, code=exited, status=1/FAILURE[0m[m
-jul 12 15:31:39 alumno-virtualbox systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185mapache2.service: Failed with result 'exit-code'.[0m[m
-jul 12 15:31:39 alumno-virtualbox systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start The Apache HTTP Server.[0m[m
-[K[?1l>]0;alumno@alumno-virtualbox: ~/sor2/TP4/capturas/3[01;32malumno@alumno-virtualbox[00m:[01;34m~/sor2/TP4/capturas/3[00m$ nano -[K[K[K[K[K[Ksudo nano -l a[K/etc/apache2/sites-enabled/secure-site.conf
-[?2004h[?1049h[22;0;0t[1;36r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[34;78H(B[0;7m[ Leyendo... ](B[m[34;75H(B[0;7m[ 17 líneas leídas ](B[m[H(B[0;7m  GNU nano 4.8                                                  /etc/apache2/sites-enabled/secure-site.conf                                                              [1;168H(B[m[35d(B[0;7m^G(B[m Ver ayuda    (B[0;7m^O(B[m Guardar[33G(B[0;7m^W(B[m Buscar[49G(B[0;7m^K(B[m Cortar Texto (B[0;7m^J(B[m Justificar   (B[0;7m^C(B[m Posición     (B[0;7mM-U(B[m Deshacer    (B[0;7mM-A(B[m Marcar texto(B[0;7mM-](B[m A llave     (B[0;7mM-Q(B[m Anterior[36d(B[0;7m^X(B[m Salir[36;17H(B[0;7m^R(B[m Leer fich.   (B[0;7m^\(B[m Reemplazar   (B[0;7m^U(B[m Pegar[36;65H(B[0;7m^T(B[m Ortografía   (B[0;7m^_(B[m Ir a línea   (B[0;7mM-E(B[m Rehacer     (B[0;7mM-6(B[m Copiar[129G(B[0;7m^Q(B[m Buscar atrás (B[0;7mM-W(B[m Siguiente[34d[2d[39;49m(B[0;7m 1(B[m <VirtualHost *:443>[3d(B[0;7m 2(B[m  ServerName secure-example.com[4d(B[0;7m 3(B[m  DocumentRoot /var/www/html[5d(B[0;7m 4(B[m  SSLEngine on[6d(B[0;7m 5(B[m SSLCertificateFile /etc/ssl/certs/selfsigned.crt[7d(B[0;7m 6(B[m SSLCertificateKeyFile /etc/ssl/private/selfsigned.key[8d(B[0;7m 7(B[m SSLProtocol all -SSLv3 -TLSv1 -TLSv1.1[9d(B[0;7m 8(B[m SSLCipherSuite HIGH:!aNULL:!MD5[10d(B[0;7m 9(B[m Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"[11d(B[0;7m10(B[m  <Directory /var/www/html>[12d(B[0;7m11(B[m  Options Indexes FollowSymLinks[13d(B[0;7m12(B[m  AllowOverride All[14d(B[0;7m13(B[m  Require all granted[15d(B[0;7m14(B[m  </Directory>[16d(B[0;7m15(B[m  ErrorLog ${APACHE_LOG_DIR}/error.log[17d(B[0;7m16(B[m  CustomLog ${APACHE_LOG_DIR}/access.log combined[18d(B[0;7m17(B[m </VirtualHost>[19d(B[0;7m18[2;4H(B[m[?12l[?25h[?25l[3d[?12l[?25h[?25l[4d[?12l[?25h[?25l[5d[?12l[?25h[?25l[6d[?12l[?25h[?25l[7d[?12l[?25h[?25l[8d[?12l[?25h[?25l[9d[?12l[?25h[?25l[10d[?12l[?25h[?25l[1;158H(B[0;7mModificado(B[m[10;4H[36m#Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"[5G[39m(B[m[?12l[?25h[?25l[36m Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"[6G[39m(B[m[?12l[?25h[?25l[?12l[?25h[?25l[34d(B[0;7m¿Guardar el búfer modificado?                                                                                                                                            [35;1H S(B[m Sí[K[36d(B[0;7m N(B[m No   [36;18H(B[0;7mC(B[m Cancelar[K[34;31H[?12l[?25h[?25l[35d(B[0;7m^G(B[m Ver ayuda[35;43H(B[0;7mM-D(B[m Formato DOS[35;85H(B[0;7mM-A(B[m Añadir[35;127H(B[0;7mM-B(B[m Respaldar fichero[36d(B[0;7m^C(B[m Cancelar[16X[36;43H(B[0;7mM-M(B[m Formato Mac[36;85H(B[0;7mM-P(B[m Anteponer[36;127H(B[0;7m^T(B[m A Ficheros[34d(B[0;7mNombre del archivo a escribir: /etc/apache2/sites-enabled/secure-site.conf(B[m[34;75H[?12l[?25h[?25l[1K (B[0;7m[ Escribiendo... ](B[m[K[1;158H(B[0;7m          (B[m[34;74H(B[0;7m[ 17 líneas escritas ](B[m[J[36d[?12l[?25h[36;1H[?1049l[23;0;0t[?1l>[?2004l]0;alumno@alumno-virtualbox: ~/sor2/TP4/capturas/3[01;32malumno@alumno-virtualbox[00m:[01;34m~/sor2/TP4/capturas/3[00m$ sudo nano -l /etc/apache2/sites-enabled/secure-site.conf[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[24Pystemctl status apache2.serviceclear[Ksudo systemctl restart apache2
-]0;alumno@alumno-virtualbox: ~/sor2/TP4/capturas/3[01;32malumno@alumno-virtualbox[00m:[01;34m~/sor2/TP4/capturas/3[00m$ sudo systemctl restart apache2nano -l /etc/apache2/sites-enabled/secure-site.conf[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[24Pystemctl status apache2.service
-[?1h=[0;1;32m●[0m apache2.service - The Apache HTTP Server[m
-     Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor preset: enabled)[m
-     Active: [0;1;32mactive (running)[0m since Sun 2026-07-12 15:33:13 -03; 4s ago[m
-       Docs: https://httpd.apache.org/docs/2.4/[m
-    Process: 13743 ExecStart=/usr/sbin/apachectl start (code=exited, status=0/SUCCESS)[m
-   Main PID: 13763 (apache2)[m
-      Tasks: 6 (limit: 4583)[m
-     Memory: 11.0M[m
-     CGroup: /system.slice/apache2.service[m
-             ├─13763 /usr/sbin/apache2 -k start[m
-             ├─13764 /usr/sbin/apache2 -k start[m
-             ├─13765 /usr/sbin/apache2 -k start[m
-             ├─13766 /usr/sbin/apache2 -k start[m
-             ├─13767 /usr/sbin/apache2 -k start[m
-             └─13768 /usr/sbin/apache2 -k start[m
-[m
-jul 12 15:33:13 alumno-virtualbox systemd[1]: Starting The Apache HTTP Server...[m
-jul 12 15:33:13 alumno-virtualbox apachectl[13762]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'S[m[7m>[27m
-jul 12 15:33:13 alumno-virtualbox systemd[1]: Started The Apache HTTP Server.[m
-[7mlines 1-19/19 (END)[27m[K[K[?1l>
-]0;alumno@alumno-virtualbox: ~/sor2/TP4/capturas/3[01;32malumno@alumno-virtualbox[00m:[01;34m~/sor2/TP4/capturas/3[00m$ systemctl status apache2.service[2Pudo systemctl restart apache2nano -l /etc/apache2/sites-enabled/secure-site.conf[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[24Pystemctl status apache2.serviceclear[Ksudo systemctl restart apache2openssl req -x509 -newkey rsa:2048 -keyout /etc/ssl/private/selfsigned.key -out /etc/ssl/certs/selfsigned.crt -days 365 -nodes[A]0;alumno@alumno-virtualbox: ~/sor2/TP4/capturas/3[01;32malumno@alumno-virtualbox[00m:[01;34m~/sor2/TP4/capturas/3[00m$ exit[K
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cnano wp-config.php[1@touch[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpwd[Kexitls -la[1Pclearrm -R wordpress/cd ..[K[3Plscd wordpress/ls[Kacp -r wordpress/* .[3P[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Ktar -xzvf latest.tar.gzls[Kcp wordpress/* .[3@-r [C[C[C[C[C[C[C[C[C[C[C[C[Clsa[K[Kcd wordpress/ls[Kcd ..rm -R wordpress/clear[Kls -la[2Pexit[1Ppwdtouch wp-config.php[1Pnano[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[Ksudo openssl req -x509 -newkey rsa:2048 -keyout /etc/ssl/private/selfsigned.key -out /etc/ssl/certs/selfsigned.crt -days 365 -nodes[A]0;alumno@alumno-virtualbox: ~/sor2/TP4/capturas/3[01;32malumno@alumno-virtualbox[00m:[01;34m~/sor2/TP4/capturas/3[00m$ [C[C[C[C[Csystemctl restart apache2[K
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cclear[Ksystemctl status apache2.serviceudo nano -l /etc/apache2/sites-enabled/secure-site.conf[26Psystemctl restart apache2ystemctl status apache2.service[Kexit
+
+ 
+ >>> alumno@alumno-virtualbox: ~/sor2/TP4/capturas/3
+alumno@alumno-virtualbox:~/sor2/TP4/capturas/3$ clear
+
+ 
+ >>> alumno@alumno-virtualbox: ~/sor2/TP4/capturas/3
+alumno@alumno-virtualbox:~/sor2/TP4/capturas/3$ systemctl status apache2.service
+● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor preset: enabled)
+     Active: failed (Result: exit-code) since Sun 2026-07-12 15:31:39 -03; 27s ago
+       Docs: https://httpd.apache.org/docs/2.4/
+    Process: 13585 ExecStart=/usr/sbin/apachectl start (code=exited, status=1/FAILURE)
+
+jul 12 15:31:39 alumno-virtualbox systemd[1]: Starting The Apache HTTP Server...
+jul 12 15:31:39 alumno-virtualbox apachectl[13596]: AH00526: Syntax error on line 9 of /etc/apache2/sites-enabled/secure-site.conf:
+jul 12 15:31:39 alumno-virtualbox apachectl[13596]: Invalid command 'Header', perhaps misspelled or defined by a module not included in the server configuration
+jul 12 15:31:39 alumno-virtualbox apachectl[13585]: Action 'start' failed.
+jul 12 15:31:39 alumno-virtualbox apachectl[13585]: The Apache error log may have more information.
+jul 12 15:31:39 alumno-virtualbox systemd[1]: apache2.service: Control process exited, code=exited, status=1/FAILURE
+jul 12 15:31:39 alumno-virtualbox systemd[1]: apache2.service: Failed with result 'exit-code'.
+jul 12 15:31:39 alumno-virtualbox systemd[1]: Failed to start The Apache HTTP Server.
+>
+ 
+ >>> alumno@alumno-virtualbox: ~/sor2/TP4/capturas/3
+alumno@alumno-virtualbox:~/sor2/TP4/capturas/3$ nano 
+sudo nano -l /etc/apache2/sites-enabled/secure-site.conf
+>
+ 
+ >>> alumno@alumno-virtualbox: ~/sor2/TP4/capturas/3 ]abled/secure-site.conf                                                                                                  S Sí                              
+ystemctl status apache2.servicclearsudo systemctl restart apache2/apache2/sites-enabled/secure-site.conf
+
+ 
+ >>> alumno@alumno-virtualbox: ~/sor2/TP4/capturas/3
+ystemctl status apache2.service/TP4/capturas/3$ sudo systemctl restart apachenano -l /etc/apache2/sites-enabled/secure-site.conf
+● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor preset: enabled)
+     Active: active (running) since Sun 2026-07-12 15:33:13 -03; 4s ago
+       Docs: https://httpd.apache.org/docs/2.4/
+    Process: 13743 ExecStart=/usr/sbin/apachectl start (code=exited, status=0/SUCCESS)
+   Main PID: 13763 (apache2)
+      Tasks: 6 (limit: 4583)
+     Memory: 11.0M
+     CGroup: /system.slice/apache2.service
+             ├─13763 /usr/sbin/apache2 -k start
+             ├─13764 /usr/sbin/apache2 -k start
+             ├─13765 /usr/sbin/apache2 -k start
+             ├─13766 /usr/sbin/apache2 -k start
+             ├─13767 /usr/sbin/apache2 -k start
+             └─13768 /usr/sbin/apache2 -k start
+
+jul 12 15:33:13 alumno-virtualbox systemd[1]: Starting The Apache HTTP Server...
+jul 12 15:33:13 alumno-virtualbox apachectl[13762]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'S>
+jul 12 15:33:13 alumno-virtualbox systemd[1]: Started The Apache HTTP Server.
+lines 1-19/19 (END)
+>
+
+ 
+ >>> alumno@alumno-virtualbox: ~/sor2/TP4/capturas/3
+
+ 
+ >>> alumno@alumno-virtualbox: ~/sor2/TP4/capturas/3 restart apacheopenssl req -x509 -newkey rsa:2048 -keyout /etc/ssl/private/selfsigned.key -out /etc/ssl/certs/selfsigned.crt -days 365 -nodes
+alumno@alumno-virtualbox:~/sor2/TP4/capturas/3$ exit
+
+ 
+ >>> alumno@alumno-virtualbox: ~/sor2/TP4/capturas/3esscd ..lcd wordpresslscp -r wordpress/* lstar -xzvf latest.tar.glscp wordpress/* -r lsacd wordpresslscd .rm -R wordpressclearls -lexipwtouch wp-config.phnanoexitsudo openssl req -x509 -newkey rsa:2048 -keyout /etc/ssl/private/selfsigned.key -out /etc/ssl/certs/selfsigned.crt -days 365 -nodes
+alumno@alumno-virtualbox:~/sor2/TP4/capturas/3$ systemctl restart apache2
+clearsystemctl status apache2.servicudo nano -l /etc/apache2/sites-enabled/secure-site.consystemctl restart apacheystemctl status apache2.servicexit
 exit
 
 Script done on 2026-07-12 15:34:10-03:00 [COMMAND_EXIT_CODE="130"]

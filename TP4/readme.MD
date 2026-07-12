@@ -267,7 +267,7 @@ sudo chown -R $USER:$USER /var/www/secure_example/public_html
 ```
  ![3-4-2-1.jpg](capturas/3/3-4-2-1.jpg)
 
-Se crea un nuevo archivo de configuración de un vhost en `/etc/apache2/sitesavailable/secure-site.conf`
+Se crea un nuevo archivo de configuración de un vhost en `/etc/apache2/sites-available/secure-site.conf`
 
 ```bash
 <VirtualHost *:443>
@@ -296,17 +296,18 @@ Archivo de [secure-site.conf](capturas/3/secure-site.conf)
 sudo a2ensite secure-site.conf
 sudo systemctl reload apache2
 ```
- ![3-4-2-2.jpg](capturas/3/3-4-2-2.jpg)
+
 
 ### 3.4.3 Generación de Certificado Autofirmado
 
 Mediante openssl generamos un CRT y una key para luego usar en Apache.
 
 ```
-SSLCertificateFile /etc/ssl/certs/selfsigned.crt
-SSLCertificateKeyFile /etc/ssl/private/selfsigned.key
+openssl req -x509 -newkey rsa:2048 -keyout /etc/ssl/private/selfsigned.key \
+-out /etc/ssl/certs/selfsigned.crt -days 365 -nodes
 ```
 
+![](capturas/3/3-4-3-2.jpg)
 
 Luego agregamos las siguientes líneas, reemplazando las ya existenets en el `secure-site.conf`
 
@@ -314,32 +315,45 @@ Luego agregamos las siguientes líneas, reemplazando las ya existenets en el `se
 SSLCertificateFile /etc/ssl/certs/selfsigned.crt
 SSLCertificateKeyFile /etc/ssl/private/selfsigned.key
 ```
-
-Finalmente reiniciamos Apache
-
-```bash
-sudo systemctl restart apache2
-```
+Resultado de la ejecución: [3-4-3-1.txt](capturas/3/3-4-3-1.txt)
 
 ### 3.4.4 Mejorando la seguridad
 
 Aplicamos las buenas prácticas recomendadas agregando estas líneas al `secure-site.conf`
 
-
 ```
 SSLProtocol all -SSLv3 -TLSv1 -TLSv1.1
 SSLCipherSuite HIGH:!aNULL:!MD5
-Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+Header always set Strict-Transport-Security "max-age=3153600 >>>  includeSubDomains"
 ```
 
-Volvemos a reiniciar Apache
+Reiniciar Apache
 
 ```bash
 sudo systemctl restart apache2
 ```
+![](capturas/3/3-4-3-3-e.jpg)
+
+Nos topamos con un error, al observar los logs que reporta systemd, observamos que es un problema en la línea 9. Sobre el manejo de headers. Decidimos comentarla para probar todo lo demás y luego resolver esta única configuración problemática
+
+![](capturas/3/3-4-3-3-r.jpg)
 
 
+# 3.4.4 Resolución del problema con la directiva Header
 
+Se resolvió la problemática habilitando el módulo Header de Apache.
+
+Mostramos el contenido de la configuración del vhost, y notamos que no funciona. Luego habilitamos el módulo, y luego el servicio inició correctamente
+
+```bash
+cat /etc/apache2/sites-available/secure-site.conf 
+sudo systemctl restart apache2
+systemctl status apache2.service
+sudo a2enmod headers
+sudo systemctl restart apache2
+```
+
+Resultado de la ejecución: [3-4-4-1.txt](capturas/3/3-4-4-1.txt)
 
 
 
