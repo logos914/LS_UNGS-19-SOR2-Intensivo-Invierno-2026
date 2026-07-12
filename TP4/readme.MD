@@ -367,3 +367,23 @@ Si bien es posible acceder mediante protocolo https al sitio web, los navegadore
 
 ## 4.1 Creación de una Autoridad Certificadora (CA) y Certificación de Llaves
 
+```bash
+mkdir -p CA/certs CA/private CA/newcerts
+cp /etc/ssl/openssl.cnf CA/ca.conf
+echo 1000 > CA/serial
+touch CA/index.txt
+```
+
+![](capturas/4/4-1-1.jpg)
+
+
+
+
+Especificamos la ruta absoluta en `ca.conf` 
+Resultado de la ejecución [4-1-2.txt](capturas/4/4-1-2.txt)
+
+Captura de `ca.conf` respecto de la `[policy_match]`
+
+![](capturas/4/4-1-3.jpg)
+
+Significando que cualquier firma que realicemos con la CA, debe tener exactamente el mismo País, Estado/Provincia y Organización.
