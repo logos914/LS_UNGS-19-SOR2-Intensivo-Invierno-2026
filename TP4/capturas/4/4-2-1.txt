@@ -1,0 +1,53 @@
+Script started on 2026-07-12 16:41:44-03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="169" LINES="36"]
+]0;alumno@alumno-virtualbox: ~/sor2/TP4/capturas/4[01;32malumno@alumno-virtualbox[00m:[01;34m~/sor2/TP4/capturas/4[00m$ exit[K[K[K[Kopenssl req -new -x509 -days 3650 -extensions v3_ca \
+> -keyout CA/private/c \
+> -config CA/ca.conf
+Generating a RSA private key
+............+++++
+...............................+++++
+writing new private key to 'CA/private/c'
+Enter PEM pass phrase:
+Verifying - Enter PEM pass phrase:
+-----
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter '.', the field will be left blank.
+-----
+Country Name (2 letter code) [AU]:AR
+State or Province Name (full name) [Some-State]:Buenos Aires
+Locality Name (eg, city) []:Los Polvorines
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:seguritas
+Organizational Unit Name (eg, section) []:
+Common Name (e.g. server FQDN or YOUR name) []:secure-example.com
+Email Address []:fa  mail@a falsa.com
+-----BEGIN CERTIFICATE-----
+MIID/TCCAuWgAwIBAgIUG8uXTcwUPY3/Fr+UGkikHc1CiF8wDQYJKoZIhvcNAQEL
+BQAwgY0xCzAJBgNVBAYTAkFSMRUwEwYDVQQIDAxCdWVub3MgQWlyZXMxFzAVBgNV
+BAcMDkxvcyBQb2x2b3JpbmVzMRIwEAYDVQQKDAlzZWd1cml0YXMxGzAZBgNVBAMM
+EnNlY3VyZS1leGFtcGxlLmNvbTEdMBsGCSqGSIb3DQEJARYObWFpbEBmYWxzYS5j
+b20wHhcNMjYwNzEyMTk0MjUyWhcNMzYwNzA5MTk0MjUyWjCBjTELMAkGA1UEBhMC
+QVIxFTATBgNVBAgMDEJ1ZW5vcyBBaXJlczEXMBUGA1UEBwwOTG9zIFBvbHZvcmlu
+ZXMxEjAQBgNVBAoMCXNlZ3VyaXRhczEbMBkGA1UEAwwSc2VjdXJlLWV4YW1wbGUu
+Y29tMR0wGwYJKoZIhvcNAQkBFg5tYWlsQGZhbHNhLmNvbTCCASIwDQYJKoZIhvcN
+AQEBBQADggEPADCCAQoCggEBAPWngRySZEMpjTYPZQqH84w1E5an5hPUHlYCnnJf
+/0+fmuM55IGEOlxpHJCmAKycAj5tM5iXxQ/JG9Nyze5C5yEP6SE77ul1cK9WvgqT
+8K2WvH/MliFDeu0ZAnsRJ9cuN1QdOdTpkJnvT8mvWIYExscGC+J7cHRfOxN/HfS1
+rdxO3acyZL1sLX9AiwL2S5/vSUS0CRpn41dHjbDtF3XcyHlFxpcJZ5ypwM65J9LQ
+e1rFEu6j/FulfjPesuYQkOgdUYJZEeINQxi6ATYCiFbWDNLYpkSoSp91hr95UJdh
+ErxN2CNx6BPYgQrZAz/e302cgUABxH3tvpHS6bk/j1dE0FECAwEAAaNTMFEwHQYD
+VR0OBBYEFLxSRhEpcuDNy/96WhKj3BqN/FO7MB8GA1UdIwQYMBaAFLxSRhEpcuDN
+y/96WhKj3BqN/FO7MA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEB
+AGPK2Bg2/et4o3vB1YyP59ulbyJNVc3+4dCHplSI7proxskS0++Y+/1OdmBlZt4d
+MqrwIOofsx3AO4vFO9nb4IkyKXYey8/rhRiOC5aaXJlxQfSv8RTyO0g5sdDLuind
+PUtdUc2yOnXG9lesEBNwK2yRf6FEDVYQdu5sc/U0Q0r2Q7nvS50tfGuSxNTiLndw
+vDMMyYIODxaJdSqxpS4hezHf02dnUt3FtmHtP2lAfGDDSaA8B45YRTQxDjxWEN73
+DyaZwwxSZqN9baAoNpcYiGsmSrzAAjfnQqUUbNSd+e3HRugoxvZRNIgzdrcUdh0k
+uhY0Df3/8OJb85LR+agj040=
+-----END CERTIFICATE-----
+]0;alumno@alumno-virtualbox: ~/sor2/TP4/capturas/4[01;32malumno@alumno-virtualbox[00m:[01;34m~/sor2/TP4/capturas/4[00m$ exit
+exit
+
+Script done on 2026-07-12 16:43:23-03:00 [COMMAND_EXIT_CODE="0"]

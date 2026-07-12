@@ -1,0 +1,58 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            32:44:2e:24:77:b8:22:df:20:50:df:c3:68:ec:b1:b9:9d:a4:5d:e0
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C = AR, ST = Buenos Aires, L = Los Polvorines, O = Seguritas, CN = secure-example.com, emailAddress = contacto@falsa.com
+        Validity
+            Not Before: Jul 12 19:47:57 2026 GMT
+            Not After : Jul  9 19:47:57 2036 GMT
+        Subject: C = AR, ST = Buenos Aires, L = Los Polvorines, O = Seguritas, CN = secure-example.com, emailAddress = contacto@falsa.com
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                RSA Public-Key: (2048 bit)
+                Modulus:
+                    00:e2:7a:f7:d0:92:34:9a:83:90:13:15:c9:c3:d0:
+                    b9:50:56:b4:5b:f6:1e:c8:2d:52:4c:fa:0e:04:37:
+                    cb:a2:6a:8e:6b:ea:ad:6f:e5:cf:9b:cd:e1:9e:24:
+                    b0:30:f5:d1:03:e1:ef:15:af:8f:51:1f:2a:4e:43:
+                    c0:c5:16:be:f3:b2:60:19:2b:40:03:d3:a8:4b:98:
+                    bc:b1:be:e9:9e:69:94:f0:f6:fa:ad:a7:ee:be:c8:
+                    84:52:e1:c4:06:5e:c8:f7:b8:36:0d:ee:38:36:bc:
+                    5b:01:6d:0a:1f:32:13:28:c4:a7:91:90:04:58:ee:
+                    c2:69:e0:b2:3f:05:9c:90:9c:36:d1:82:60:d3:19:
+                    79:40:4d:ca:fb:50:fe:72:a7:f2:27:b1:6b:18:72:
+                    32:4e:51:89:26:dd:ef:ca:f6:c4:c0:25:c2:50:16:
+                    c8:6e:52:ff:a3:95:41:a2:23:2e:d2:10:79:27:72:
+                    0a:26:72:9a:f0:f4:87:50:79:3b:ab:bd:5a:b8:fb:
+                    df:21:67:37:b8:e1:1f:6b:0f:bd:14:2b:db:db:d8:
+                    72:ed:1e:82:77:d2:a2:b1:49:84:01:62:5a:02:0d:
+                    63:4b:0e:d0:ff:b4:bb:b1:bb:fd:38:59:bb:53:c6:
+                    9d:4a:91:41:ff:cb:c5:ab:4d:04:22:a7:5f:9f:32:
+                    f8:f1
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Subject Key Identifier: 
+                93:02:A0:DA:BC:CC:52:7D:54:68:43:96:6D:54:68:E8:69:77:8E:78
+            X509v3 Authority Key Identifier: 
+                keyid:93:02:A0:DA:BC:CC:52:7D:54:68:43:96:6D:54:68:E8:69:77:8E:78
+
+            X509v3 Basic Constraints: critical
+                CA:TRUE
+    Signature Algorithm: sha256WithRSAEncryption
+         57:f5:96:34:25:c2:f9:5b:b7:3f:9e:8b:24:68:5f:38:dd:cb:
+         c3:be:0c:91:26:fb:98:6e:fb:d5:e5:2a:74:64:1e:ce:52:5c:
+         67:1d:5f:e4:dd:13:08:69:e6:b7:ab:fa:a5:26:b6:f4:bc:b2:
+         dd:fe:c1:e1:23:9b:35:6f:8c:b6:4b:0b:e5:f0:ee:e8:0a:9a:
+         57:f5:d8:e6:86:66:11:d0:3a:7f:4e:05:fe:0c:47:73:36:89:
+         ca:ba:d1:02:a4:03:5a:7d:44:6a:90:bb:59:06:32:f2:f5:48:
+         d1:ad:d2:c8:1b:eb:ca:49:5b:21:a0:85:4a:51:b6:0c:59:f7:
+         c5:64:c8:42:a5:cb:b3:bc:9b:11:55:dd:ac:49:29:32:f6:4a:
+         a2:e7:f7:51:ec:70:d1:33:7f:60:db:b0:a7:3e:dc:0e:e5:53:
+         c2:c5:21:1f:6d:83:a5:aa:6f:78:67:26:80:2b:c0:e5:76:3e:
+         fd:97:2b:dd:fe:17:3f:cc:09:2d:e9:c5:3c:0d:54:ad:8f:7f:
+         5a:d0:26:2c:c2:14:84:d3:cb:04:62:78:b7:67:53:cf:9e:d5:
+         af:e4:70:40:e3:92:ad:00:54:0c:2b:7d:ea:ca:6b:b3:19:30:
+         99:2c:57:68:d9:0e:79:57:4a:46:93:04:92:82:eb:32:c5:07:
+         dd:d0:05:7d
