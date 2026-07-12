@@ -197,7 +197,7 @@ wget https://wordpress.org/latest.tar.gz
 tar -xzvf latest.tar.gz
 
 
-Resultado de la ejecución: [3-3-1-1.md](capturas/3/3-3-1-1.md)
+Resultado de la ejecución: [3-3-1-1.txt](capturas/3/3-3-1-1.txt)
 
 
 

@@ -1,5 +1,8 @@
 Script started on 2026-07-12 10:25:43-03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="169" LINES="36"]
-]0;alumno@alumno-virtualbox: ~/sor2/TP4/capturas/3[01;32malumno@alumno-virtualbox[00m:[01;34m~/sor2/TP4/capturas/3[00m$ sudo mysql_secure_installation 
+
+ 
+ >>> alumno@alumno-virtualbox: ~/sor2/TP4/capturas/3
+alumno@alumno-virtualbox:~/sor2/TP4/capturas/3$ sudo mysql_secure_installation 
 [sudo] contraseña para alumno: 
 
 Securing the MySQL server deployment.
@@ -51,7 +54,10 @@ Reload privilege tables now? (Press y|Y for Yes, any other key for No) : y
 Success.
 
 All done! 
-]0;alumno@alumno-virtualbox: ~/sor2/TP4/capturas/3[01;32malumno@alumno-virtualbox[00m:[01;34m~/sor2/TP4/capturas/3[00m$ exit
+
+ 
+ >>> alumno@alumno-virtualbox: ~/sor2/TP4/capturas/3
+alumno@alumno-virtualbox:~/sor2/TP4/capturas/3$ exit
 exit
 
 Script done on 2026-07-12 10:26:27-03:00 [COMMAND_EXIT_CODE="0"]

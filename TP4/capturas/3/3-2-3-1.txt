@@ -1,11 +1,14 @@
 Script started on 2026-07-12 10:46:54-03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="169" LINES="36"]
-]0;alumno@alumno-virtualbox: ~/sor2/TP4/capturas/3[01;32malumno@alumno-virtualbox[00m:[01;34m~/sor2/TP4/capturas/3[00m$ sudo apt-get install php libapache2-mod-php php-mysql -y
+
+ 
+ >>> alumno@alumno-virtualbox: ~/sor2/TP4/capturas/3
+alumno@alumno-virtualbox:~/sor2/TP4/capturas/3$ sudo apt-get install php libapache2-mod-php php-mysql -y
 [sudo] contraseña para alumno: 
 Lo sentimos, vuelva a intentarlo.
 [sudo] contraseña para alumno: 
-Leyendo lista de paquetes... 0%Leyendo lista de paquetes... 100%Leyendo lista de paquetes... Hecho
-Creando árbol de dependencias... 0%Creando árbol de dependencias... 0%Creando árbol de dependencias... 50%Creando árbol de dependencias... 50%Creando árbol de dependencias       
-Leyendo la información de estado... 0%Leyendo la información de estado... 0%Leyendo la información de estado... Hecho
+Leyendo lista de paquetes... Hecho
+Creando árbol de dependencias       
+Leyendo la información de estado... Hecho
 Se instalarán los siguientes paquetes adicionales:
   libapache2-mod-php7.4 php-common php7.4 php7.4-cli php7.4-common php7.4-json php7.4-mysql php7.4-opcache php7.4-readline
 Paquetes sugeridos:
@@ -15,21 +18,21 @@ Se instalarán los siguientes paquetes NUEVOS:
 0 actualizados, 12 nuevos se instalarán, 0 para eliminar y 142 no actualizados.
 Se necesita descargar 4.161 kB de archivos.
 Se utilizarán 18,5 MB de espacio de disco adicional después de esta operación.
-0% [Trabajando]0% [Esperando las cabeceras]                            Des:1 http://archive.ubuntu.com/ubuntu focal/main amd64 php-common all 2:75 [11,9 kB]
-0% [1 php-common 11,9 kB/11,9 kB 100%]                                      2% [Trabajando]               Des:2 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 php7.4-common amd64 7.4.3-4ubuntu2.29 [985 kB]
-2% [2 php7.4-common 2.604 B/985 kB 0%]4% [2 php7.4-common 90,9 kB/985 kB 9%]10% [2 php7.4-common 443 kB/985 kB 45%]                                       23% [Esperando las cabeceras]                             Des:3 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 php7.4-json amd64 7.4.3-4ubuntu2.29 [19,2 kB]
-23% [3 php7.4-json 10,7 kB/19,2 kB 56%]                                       25% [Esperando las cabeceras]                             Des:4 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 php7.4-opcache amd64 7.4.3-4ubuntu2.29 [198 kB]
-25% [4 php7.4-opcache 2.778 B/198 kB 1%]                                        30% [Esperando las cabeceras]                             Des:5 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 php7.4-readline amd64 7.4.3-4ubuntu2.29 [12,6 kB]
-30% [5 php7.4-readline 9.670 B/12,6 kB 77%]                                           32% [Esperando las cabeceras]                             Des:6 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 php7.4-cli amd64 7.4.3-4ubuntu2.29 [1.427 kB]
-32% [6 php7.4-cli 10,9 kB/1.427 kB 1%]                                      61% [Esperando las cabeceras]                             Des:7 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libapache2-mod-php7.4 amd64 7.4.3-4ubuntu2.29 [1.369 kB]
-61% [7 libapache2-mod-php7.4 0 B/1.369 kB 0%]                                             89% [Esperando las cabeceras]                             Des:8 http://archive.ubuntu.com/ubuntu focal/main amd64 libapache2-mod-php all 2:7.4+75 [2.836 B]
-89% [8 libapache2-mod-php 0 B/2.836 B 0%]                                         91% [Esperando las cabeceras]                             Des:9 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 php7.4 all 7.4.3-4ubuntu2.29 [9.240 B]
-91% [9 php7.4 9.240 B/9.240 B 100%]                                   Des:10 http://archive.ubuntu.com/ubuntu focal/main amd64 php all 2:7.4+75 [2.712 B]
-                                   93% [10 php 2.712 B/2.712 B 100%]                                 94% [Esperando las cabeceras]                             Des:11 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 php7.4-mysql amd64 7.4.3-4ubuntu2.29 [121 kB]
-94% [11 php7.4-mysql 0 B/121 kB 0%]                                   98% [Esperando las cabeceras]                             Des:12 http://archive.ubuntu.com/ubuntu focal/main amd64 php-mysql all 2:7.4+75 [2.000 B]
-                             100% [Trabajando]                 Descargados 4.161 kB en 2s (1.673 kB/s)
+Des:1 http://archive.ubuntu.com/ubuntu focal/main amd64 php-common all 2:75 [11,9 kB]
+Des:2 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 php7.4-common amd64 7.4.3-4ubuntu2.29 [985 kB]
+Des:3 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 php7.4-json amd64 7.4.3-4ubuntu2.29 [19,2 kB]
+Des:4 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 php7.4-opcache amd64 7.4.3-4ubuntu2.29 [198 kB]
+Des:5 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 php7.4-readline amd64 7.4.3-4ubuntu2.29 [12,6 kB]
+Des:6 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 php7.4-cli amd64 7.4.3-4ubuntu2.29 [1.427 kB]
+Des:7 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libapache2-mod-php7.4 amd64 7.4.3-4ubuntu2.29 [1.369 kB]
+Des:8 http://archive.ubuntu.com/ubuntu focal/main amd64 libapache2-mod-php all 2:7.4+75 [2.836 B]
+Des:9 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 php7.4 all 7.4.3-4ubuntu2.29 [9.240 B]
+Des:10 http://archive.ubuntu.com/ubuntu focal/main amd64 php all 2:7.4+75 [2.712 B]
+Des:11 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 php7.4-mysql amd64 7.4.3-4ubuntu2.29 [121 kB]
+Des:12 http://archive.ubuntu.com/ubuntu focal/main amd64 php-mysql all 2:7.4+75 [2.000 B]
+Descargados 4.161 kB en 2s (1.673 kB/s)
 Seleccionando el paquete php-common previamente no seleccionado.
-(Leyendo la base de datos ... (Leyendo la base de datos ... 5%(Leyendo la base de datos ... 10%(Leyendo la base de datos ... 15%(Leyendo la base de datos ... 20%(Leyendo la base de datos ... 25%(Leyendo la base de datos ... 30%(Leyendo la base de datos ... 35%(Leyendo la base de datos ... 40%(Leyendo la base de datos ... 45%(Leyendo la base de datos ... 50%(Leyendo la base de datos ... 55%(Leyendo la base de datos ... 60%(Leyendo la base de datos ... 65%(Leyendo la base de datos ... 70%(Leyendo la base de datos ... 75%(Leyendo la base de datos ... 80%(Leyendo la base de datos ... 85%(Leyendo la base de datos ... 90%(Leyendo la base de datos ... 95%(Leyendo la base de datos ... 100%(Leyendo la base de datos ... 265614 ficheros o directorios instalados actualmente.)
+(Leyendo la base de datos ... 265614 ficheros o directorios instalados actualmente.)
 Preparando para desempaquetar .../00-php-common_2%3a75_all.deb ...
 Desempaquetando php-common (2:75) ...
 Seleccionando el paquete php7.4-common previamente no seleccionado.
@@ -138,7 +141,10 @@ Configurando php (2:7.4+75) ...
 Procesando disparadores para man-db (2.9.1-1) ...
 Procesando disparadores para php7.4-cli (7.4.3-4ubuntu2.29) ...
 Procesando disparadores para libapache2-mod-php7.4 (7.4.3-4ubuntu2.29) ...
-]0;alumno@alumno-virtualbox: ~/sor2/TP4/capturas/3[01;32malumno@alumno-virtualbox[00m:[01;34m~/sor2/TP4/capturas/3[00m$ exit
+
+ 
+ >>> alumno@alumno-virtualbox: ~/sor2/TP4/capturas/3
+alumno@alumno-virtualbox:~/sor2/TP4/capturas/3$ exit
 exit
 
 Script done on 2026-07-12 10:47:51-03:00 [COMMAND_EXIT_CODE="0"]

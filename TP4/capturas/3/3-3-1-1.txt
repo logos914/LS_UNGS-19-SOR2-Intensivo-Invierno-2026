@@ -3,7 +3,10 @@
 
 ```ansi
 Script started on 2026-07-12 12:12:08-03:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="169" LINES="36"]
-]0;alumno@alumno-virtualbox: /var/www/empresa2.com/public_html[01;32malumno@alumno-virtualbox[00m:[01;34m/var/www/empresa2.com/public_html[00m$ wget https://wordpress.org/latest.tar.gz
+
+ 
+>>> alumno@alumno-virtualbox: /var/www/empresa2.com/public_html
+alumno@alumno-virtualbox:/var/www/empresa2.com/public_html$ wget https://wordpress.org/latest.tar.gz
 --2026-07-12 12:12:19--  https://wordpress.org/latest.tar.gz
 Resolviendo wordpress.org (wordpress.org)... 66.6.42.252, 2620:109:b00a::4206:2afc
 Conectando con wordpress.org (wordpress.org)[66.6.42.252]:443... conectado.
@@ -37,7 +40,10 @@ latest.tar.gz                              100%[================================
 
 2026-07-12 12:12:26 (4,44 MB/s) - “latest.tar.gz” guardado [29666577/29666577]
 
-]0;alumno@alumno-virtualbox: /var/www/empresa2.com/public_html[01;32malumno@alumno-virtualbox[00m:[01;34m/var/www/empresa2.com/public_html[00m$ tar -xzvf latest.tar.gz
+
+ 
+>>> alumno@alumno-virtualbox: /var/www/empresa2.com/public_html
+alumno@alumno-virtualbox:/var/www/empresa2.com/public_html$ tar -xzvf latest.tar.gz
 wordpress/
 wordpress/index.php
 wordpress/license.txt
@@ -4446,45 +4452,78 @@ wordpress/wp-settings.php
 wordpress/wp-signup.php
 wordpress/wp-trackback.php
 wordpress/xmlrpc.php
-]0;alumno@alumno-virtualbox: /var/www/empresa2.com/public_html[01;32malumno@alumno-virtualbox[00m:[01;34m/var/www/empresa2.com/public_html[00m$ ls
-index.html  [0m[01;31mlatest.tar.gz[0m  [01;34mwordpress[0m
-]0;alumno@alumno-virtualbox: /var/www/empresa2.com/public_html[01;32malumno@alumno-virtualbox[00m:[01;34m/var/www/empresa2.com/public_html[00m$ cp wordpress/* .
+
+ 
+>>> alumno@alumno-virtualbox: /var/www/empresa2.com/public_html
+alumno@alumno-virtualbox:/var/www/empresa2.com/public_html$ ls
+index.html  latest.tar.gz  wordpress
+
+ 
+>>> alumno@alumno-virtualbox: /var/www/empresa2.com/public_html
+alumno@alumno-virtualbox:/var/www/empresa2.com/public_html$ cp wordpress/* .
 cp: -r not specified; omitting directory 'wordpress/wp-admin'
 cp: -r not specified; omitting directory 'wordpress/wp-content'
 cp: -r not specified; omitting directory 'wordpress/wp-includes'
-]0;alumno@alumno-virtualbox: /var/www/empresa2.com/public_html[01;32malumno@alumno-virtualbox[00m:[01;34m/var/www/empresa2.com/public_html[00m$ cp wordpress/* .[C[C[C[1@ [1@-[1@r
-]0;alumno@alumno-virtualbox: /var/www/empresa2.com/public_html[01;32malumno@alumno-virtualbox[00m:[01;34m/var/www/empresa2.com/public_html[00m$ lsa
+
+ 
+>>> alumno@alumno-virtualbox: /var/www/empresa2.com/public_html
+alumno@alumno-virtualbox:/var/www/empresa2.com/public_html$ cp wordpress/* -r
+
+ 
+>>> alumno@alumno-virtualbox: /var/www/empresa2.com/public_html
+alumno@alumno-virtualbox:/var/www/empresa2.com/public_html$ lsa
 
 Orden «lsa» no encontrada, pero hay 18 similares.
 
-]0;alumno@alumno-virtualbox: /var/www/empresa2.com/public_html[01;32malumno@alumno-virtualbox[00m:[01;34m/var/www/empresa2.com/public_html[00m$ ls
+
+ 
+>>> alumno@alumno-virtualbox: /var/www/empresa2.com/public_html
+alumno@alumno-virtualbox:/var/www/empresa2.com/public_html$ ls
 index.html     license.txt  wp-activate.php     wp-comments-post.php  wp-cron.php        wp-load.php   wp-settings.php   xmlrpc.php
-index.php      readme.html  [0m[01;34mwp-admin[0m            wp-config-sample.php  [01;34mwp-includes[0m        wp-login.php  wp-signup.php
-[01;31mlatest.tar.gz[0m  [01;34mwordpress[0m    wp-blog-header.php  [01;34mwp-content[0m            wp-links-opml.php  wp-mail.php   wp-trackback.php
-]0;alumno@alumno-virtualbox: /var/www/empresa2.com/public_html[01;32malumno@alumno-virtualbox[00m:[01;34m/var/www/empresa2.com/public_html[00m$ cd wordpress/
-]0;alumno@alumno-virtualbox: /var/www/empresa2.com/public_html/wordpress[01;32malumno@alumno-virtualbox[00m:[01;34m/var/www/empresa2.com/public_html/wordpress[00m$ ls
-index.php    readme.html      [0m[01;34mwp-admin[0m            wp-comments-post.php  [01;34mwp-content[0m   [01;34mwp-includes[0m        wp-load.php   wp-mail.php      wp-signup.php     xmlrpc.php
+index.php      readme.html  wp-admin            wp-config-sample.php  wp-includes        wp-login.php  wp-signup.php
+latest.tar.gz  wordpress    wp-blog-header.php  wp-content            wp-links-opml.php  wp-mail.php   wp-trackback.php
+
+ 
+>>> alumno@alumno-virtualbox: /var/www/empresa2.com/public_html
+alumno@alumno-virtualbox:/var/www/empresa2.com/public_html$ cd wordpress/
+
+ 
+>>> alumno@alumno-virtualbox: /var/www/empresa2.com/public_html/wordpress
+alumno@alumno-virtualbox:/var/www/empresa2.com/public_html/wordpress$ ls
+index.php    readme.html      wp-admin            wp-comments-post.php  wp-content   wp-includes        wp-load.php   wp-mail.php      wp-signup.php     xmlrpc.php
 license.txt  wp-activate.php  wp-blog-header.php  wp-config-sample.php  wp-cron.php  wp-links-opml.php  wp-login.php  wp-settings.php  wp-trackback.php
-]0;alumno@alumno-virtualbox: /var/www/empresa2.com/public_html/wordpress[01;32malumno@alumno-virtualbox[00m:[01;34m/var/www/empresa2.com/public_html/wordpress[00m$ cd ..
-]0;alumno@alumno-virtualbox: /var/www/empresa2.com/public_html[01;32malumno@alumno-virtualbox[00m:[01;34m/var/www/empresa2.com/public_html[00m$ rm -R wordpress/
-]0;alumno@alumno-virtualbox: /var/www/empresa2.com/public_html[01;32malumno@alumno-virtualbox[00m:[01;34m/var/www/empresa2.com/public_html[00m$ clear
-[H[2J[3J]0;alumno@alumno-virtualbox: /var/www/empresa2.com/public_html[01;32malumno@alumno-virtualbox[00m:[01;34m/var/www/empresa2.com/public_html[00m$ ls -la
+
+ 
+>>> alumno@alumno-virtualbox: /var/www/empresa2.com/public_html/wordpress
+alumno@alumno-virtualbox:/var/www/empresa2.com/public_html/wordpress$ cd ..
+
+ 
+>>> alumno@alumno-virtualbox: /var/www/empresa2.com/public_html
+alumno@alumno-virtualbox:/var/www/empresa2.com/public_html$ rm -R wordpress/
+
+ 
+>>> alumno@alumno-virtualbox: /var/www/empresa2.com/public_html
+alumno@alumno-virtualbox:/var/www/empresa2.com/public_html$ clear
+
+ 
+>>> alumno@alumno-virtualbox: /var/www/empresa2.com/public_html
+alumno@alumno-virtualbox:/var/www/empresa2.com/public_html$ ls -la
 total 29220
-drwxr-xr-x  5 alumno alumno     4096 jul 12 12:13 [0m[01;34m.[0m
-drwxr-xr-x  3 alumno alumno     4096 jul 12 09:26 [01;34m..[0m
+drwxr-xr-x  5 alumno alumno     4096 jul 12 12:13 .
+drwxr-xr-x  3 alumno alumno     4096 jul 12 09:26 ..
 -rw-rw-r--  1 alumno alumno      160 jul 12 09:47 index.html
 -rw-r--r--  1 alumno alumno      405 jul 12 12:12 index.php
--rw-rw-r--  1 alumno alumno 29666577 jul  9 13:42 [01;31mlatest.tar.gz[0m
+-rw-rw-r--  1 alumno alumno 29666577 jul  9 13:42 latest.tar.gz
 -rw-r--r--  1 alumno alumno    19903 jul 12 12:12 license.txt
 -rw-r--r--  1 alumno alumno     7406 jul 12 12:12 readme.html
 -rw-r--r--  1 alumno alumno     7371 jul 12 12:12 wp-activate.php
-drwxr-xr-x  9 alumno alumno     4096 jul 12 12:12 [01;34mwp-admin[0m
+drwxr-xr-x  9 alumno alumno     4096 jul 12 12:12 wp-admin
 -rw-r--r--  1 alumno alumno      351 jul 12 12:12 wp-blog-header.php
 -rw-r--r--  1 alumno alumno     2323 jul 12 12:12 wp-comments-post.php
 -rw-r--r--  1 alumno alumno     3339 jul 12 12:12 wp-config-sample.php
-drwxr-xr-x  4 alumno alumno     4096 jul 12 12:12 [01;34mwp-content[0m
+drwxr-xr-x  4 alumno alumno     4096 jul 12 12:12 wp-content
 -rw-r--r--  1 alumno alumno     5617 jul 12 12:12 wp-cron.php
-drwxr-xr-x 35 alumno alumno    16384 jul 12 12:12 [01;34mwp-includes[0m
+drwxr-xr-x 35 alumno alumno    16384 jul 12 12:12 wp-includes
 -rw-r--r--  1 alumno alumno     2493 jul 12 12:12 wp-links-opml.php
 -rw-r--r--  1 alumno alumno     3937 jul 12 12:12 wp-load.php
 -rw-r--r--  1 alumno alumno    51850 jul 12 12:12 wp-login.php
@@ -4493,7 +4532,10 @@ drwxr-xr-x 35 alumno alumno    16384 jul 12 12:12 [01;34mwp-includes[0m
 -rw-r--r--  1 alumno alumno    34621 jul 12 12:12 wp-signup.php
 -rw-r--r--  1 alumno alumno     5214 jul 12 12:12 wp-trackback.php
 -rw-r--r--  1 alumno alumno     3205 jul 12 12:12 xmlrpc.php
-]0;alumno@alumno-virtualbox: /var/www/empresa2.com/public_html[01;32malumno@alumno-virtualbox[00m:[01;34m/var/www/empresa2.com/public_html[00m$ exit
+
+ 
+>>> alumno@alumno-virtualbox: /var/www/empresa2.com/public_html
+alumno@alumno-virtualbox:/var/www/empresa2.com/public_html$ exit
 exit
 
 Script done on 2026-07-12 12:13:29-03:00 [COMMAND_EXIT_CODE="0"]
