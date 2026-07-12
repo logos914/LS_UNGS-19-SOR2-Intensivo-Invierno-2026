@@ -109,7 +109,7 @@ Se ejecutaron los siguientes comandos para crear las carpetas de los virtual hos
 
 ![Virtual Hosts](capturas/3/3-1-3-1.jpg)
 
-Se crearon archivos index.html para cada empresa. Cada uno en su respectivo `/var/www/empresax/public_html`
+Se crearon archivos index.html para cada empresa. Cada uno en su respectivo `/var/www/empresax.com/public_html`
 
 - Empresa 1: [index.html](capturas/3/empresa1/index.html)
 - Empresa 2: [index.html](capturas/3/empresa2/index.html)
