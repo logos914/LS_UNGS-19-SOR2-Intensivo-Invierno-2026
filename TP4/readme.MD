@@ -248,7 +248,7 @@ Finalizamos el asistente
 
  ## 3.4 Cuarta Parte: Configuración de Certificados y Seguridad en HTTPS
 
- ### 3.4.1 Habilitación de módulos de Apache para SSL @todo
+ ### 3.4.1 Habilitación de módulos de Apache para SSL
 
 ```bash
 sudo a2enmod ssl
@@ -387,3 +387,47 @@ Captura de `ca.conf` respecto de la `[policy_match]`
 ![](capturas/4/4-1-3.jpg)
 
 Significando que cualquier firma que realicemos con la CA, debe tener exactamente el mismo País, Estado/Provincia y Organización.
+
+Se asignan los permisos adecuados al directorio `private`
+
+```bash
+chmod 700 CA/private
+```
+![](capturas/4/4-1-4.jpg)
+
+
+## 4.2 Creación de CA
+
+### 4.2.1 Autofirmado
+
+```bash
+openssl req -new -x509 -days 3650 -extensions v3_ca \
+-keyout CA/private/c \
+-config CA/ca.conf
+```
+![](capturas/4/4-2-2.jpg)
+
+Resultado de la ejecución [4-2-1.txt](capturas/4/4-2-1.txt)
+
+### 4.2.2 Análisis del certificado
+
+```bash
+openssl x509 -in CA/cacert.pem -noout -text
+```
+Se puede observar que es un certificado autofirmado porque el campo `Issuer` son exactamente iguales a los datos del campo `Subject`
+
+![](capturas/4/4-2-4.jpg)
+
+Resultado de la ejecución [4-2-3.txt](capturas/4/4-2-3.txt)
+
+### 4.2.3 Archivos creados
+
+`CA/private/cakey.pem:`
+
+Es la llave privada de la Autoridad Certificadora. Como su nombre indica y al estar en la carpeta private, es el archivo más secreto. Sirve para firmar todos los futuros certificados.
+
+`CA/cacert.pem:`
+
+Es el certificado público (autofirmado) de la CA. Este archivo es público y es el que los navegadores usarán para confiar en los certificados que firme la CA.
+
+## 4.3 

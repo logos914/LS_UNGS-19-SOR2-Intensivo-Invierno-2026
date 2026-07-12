@@ -1,5 +1,8 @@
 Script started on 2026-07-12 16:41:44-03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="169" LINES="36"]
-]0;alumno@alumno-virtualbox: ~/sor2/TP4/capturas/4[01;32malumno@alumno-virtualbox[00m:[01;34m~/sor2/TP4/capturas/4[00m$ exit[K[K[K[Kopenssl req -new -x509 -days 3650 -extensions v3_ca \
+
+ 
+ >>> alumno@alumno-virtualbox: ~/sor2/TP4/capturas/4
+alumno@alumno-virtualbox:~/sor2/TP4/capturas/4$ exiopenssl req -new -x509 -days 3650 -extensions v3_ca \
 > -keyout CA/private/c \
 > -config CA/ca.conf
 Generating a RSA private key
@@ -22,7 +25,7 @@ Locality Name (eg, city) []:Los Polvorines
 Organization Name (eg, company) [Internet Widgits Pty Ltd]:seguritas
 Organizational Unit Name (eg, section) []:
 Common Name (e.g. server FQDN or YOUR name) []:secure-example.com
-Email Address []:fa  mail@a falsa.com
+Email Address []:fmail@falsa.com
 -----BEGIN CERTIFICATE-----
 MIID/TCCAuWgAwIBAgIUG8uXTcwUPY3/Fr+UGkikHc1CiF8wDQYJKoZIhvcNAQEL
 BQAwgY0xCzAJBgNVBAYTAkFSMRUwEwYDVQQIDAxCdWVub3MgQWlyZXMxFzAVBgNV
@@ -47,7 +50,10 @@ vDMMyYIODxaJdSqxpS4hezHf02dnUt3FtmHtP2lAfGDDSaA8B45YRTQxDjxWEN73
 DyaZwwxSZqN9baAoNpcYiGsmSrzAAjfnQqUUbNSd+e3HRugoxvZRNIgzdrcUdh0k
 uhY0Df3/8OJb85LR+agj040=
 -----END CERTIFICATE-----
-]0;alumno@alumno-virtualbox: ~/sor2/TP4/capturas/4[01;32malumno@alumno-virtualbox[00m:[01;34m~/sor2/TP4/capturas/4[00m$ exit
+
+ 
+ >>> alumno@alumno-virtualbox: ~/sor2/TP4/capturas/4
+alumno@alumno-virtualbox:~/sor2/TP4/capturas/4$ exit
 exit
 
 Script done on 2026-07-12 16:43:23-03:00 [COMMAND_EXIT_CODE="0"]
