@@ -60,6 +60,7 @@ En el apartado 3 en adelante, se nos solicita crear virtual host en Apache para 
 cat /etc/hosts
 echo "127.0.0.1    empresa1.com" | sudo tee -a /etc/hosts
 echo "127.0.0.1    empresa2.com" | sudo tee -a /etc/hosts
+echo "127.0.0.1    secure-example.com" | sudo tee -a /etc/hosts
 ping -c 4 empresa1.com
 ```
 
@@ -241,11 +242,101 @@ Finalizamos el asistente
  ![3-3-2-6.jpg](capturas/3/3-3-2-6.jpg)
 
  Ya tenemos Wordpress completamente funcional
- 
+
  ![3-3-2-7.jpg](capturas/3/3-3-2-7.jpg)
 
 
+ ## 3.4 Cuarta Parte: Configuración de Certificados y Seguridad en HTTPS
 
+ ### 3.4.1 Habilitación de módulos de Apache para SSL @todo
+
+```bash
+sudo a2enmod ssl
+sudo a2enmod socache_shmcb
+```
+ ![3-4-1-1.jpg](capturas/3/3-4-1-1.jpg)
+
+
+ ### 3.4.2 Creación de nuevo virtual host con SSL
+
+Se crea la carpeta para contener el sitio web que va a usar https ejecutando:
+
+```bash
+sudo mkdir -p /var/www/secure_example/public_html
+sudo chown -R $USER:$USER /var/www/secure_example/public_html
+```
+ ![3-4-2-1.jpg](capturas/3/3-4-2-1.jpg)
+
+Se crea un nuevo archivo de configuración de un vhost en `/etc/apache2/sitesavailable/secure-site.conf`
+
+```bash
+<VirtualHost *:443>
+ ServerName secure-example.com
+ DocumentRoot /var/www/secure_example/public_html
+ SSLEngine on
+ SSLCertificateFile /etc/ssl/certs/alice_cert.pem
+ SSLCertificateKeyFile /etc/ssl/private/alice.pem
+ <Directory /var/www/html>
+ Options Indexes FollowSymLinks
+ AllowOverride All
+ Require all granted
+ </Directory>
+ ErrorLog ${APACHE_LOG_DIR}/error.log
+ CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+```
+
+Archivo de [secure-site.conf](capturas/3/secure-site.conf)
+
+
+ Habilitamos el nuevo virtual host ejecutando:
+
+```bash
+sudo a2ensite secure-site.conf
+sudo systemctl reload apache2
+```
+ ![3-4-2-2.jpg](capturas/3/3-4-2-2.jpg)
+
+### 3.4.3 Generación de Certificado Autofirmado
+
+Mediante openssl generamos un CRT y una key para luego usar en Apache.
+
+```
+SSLCertificateFile /etc/ssl/certs/selfsigned.crt
+SSLCertificateKeyFile /etc/ssl/private/selfsigned.key
+```
+
+
+Luego agregamos las siguientes líneas, reemplazando las ya existenets en el `secure-site.conf`
+
+```
+SSLCertificateFile /etc/ssl/certs/selfsigned.crt
+SSLCertificateKeyFile /etc/ssl/private/selfsigned.key
+```
+
+Finalmente reiniciamos Apache
+
+```bash
+sudo systemctl restart apache2
+```
+
+### 3.4.4 Mejorando la seguridad
+
+Aplicamos las buenas prácticas recomendadas agregando estas líneas al `secure-site.conf`
+
+
+```
+SSLProtocol all -SSLv3 -TLSv1 -TLSv1.1
+SSLCipherSuite HIGH:!aNULL:!MD5
+Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+```
+
+Volvemos a reiniciar Apache
+
+```bash
+sudo systemctl restart apache2
+```
 
 
 
