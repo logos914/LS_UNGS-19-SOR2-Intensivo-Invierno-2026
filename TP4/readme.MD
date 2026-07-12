@@ -183,3 +183,42 @@ Se crea un archivo info.php dentro del vhost de empresa 1
 Se accede satisfactoriamente mediante el navegador web y PHP es funcional
 
 ![3-2-4-2.jpg](capturas/3/3-2-4-2.jpg)
+
+
+## 3.3 Tercera Parte: Instalación de un CMS (WordPress)
+
+### 3.3.1 Descarga e instalación
+
+Se procede a seguir las instrucciones de la [documentación oficial](https://developer.wordpress.org/advanced-administration/before-install/howto-install/)
+
+Ubicados en `/var/www/empresa2.com/public_html`
+
+wget https://wordpress.org/latest.tar.gz
+tar -xzvf latest.tar.gz
+
+
+Resultado de la ejecución: [3-3-1-1.md](capturas/3/3-3-1-1.md)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
