@@ -76,6 +76,11 @@ Contenido de: [ports.conf](capturas/3/ports.conf)
 
 ### 3.1.3 Configuración de sitios virtuales
 
-Se ejecutaron los siguientes comandos para crear las carpetas de los virtual hosts 
+Se ejecutaron los siguientes comandos para crear las carpetas de los virtual hosts, y asignarle permisos adecuados a nuestro usuario
 
 ![Virtual Hosts](capturas/3/3-1-3-1.jpg)
+
+Se crearon archivos index.html para cada empresa. Cada uno en su respectivo `/var/www/empresax/public_html`
+
+- Empresa 1: [index.html](capturas/3/empresa1/index.html)
+- Empresa 2: [index.html](capturas/3/empresa2/index.html)
