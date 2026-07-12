@@ -42,9 +42,38 @@ Tabla de distribución:
 ## 2.3 Herramientas utilizadas (nombre y versión de cada herramienta relevante)
 
 ### 2.3.1 Preparación de la VM para escrbir en repo
+Creamos un juego de clave privada y pública SSH para poder iniciar sesión usando dicho protocolo en el repositorio GIT del presente trabajo. 
+
+Con la finalidad de facilitar la sincronización de los archivos de captura de pantalla o de grabación de la entrada/salida de la terminal
+
+```bash
+ssh keygen
+```
+
 ![](capturas/2/2-2-sshkeygen.jpg)
 
-## 2.4 Estado inicial del sistema (capturas del estado "antes" según lo indicado en el enunciado de
+### 2.3.2 Configuración de /etc/hosts
+En el apartado 3 en adelante, se nos solicita crear virtual host en Apache para dominios `empresa1.com` y `empresa2.com`. Sin embargo, la resolución de nombres terminará apuntando a estos sitios en internet. Por lo tanto necesitamos forzar a la máquina virtual a que apunte dichos nombres DNS al propio `localhost`, con la finalidad de que el navegador apunte las solicitudes web a nuestro servidor Apache.
+
+
+```bash
+cat /etc/hosts
+echo "127.0.0.1    empresa1.com" | sudo tee -a /etc/hosts
+echo "127.0.0.1    empresa2.com" | sudo tee -a /etc/hosts
+ping -c 4 empresa1.com
+```
+
+Con estos comandos, asignamos que los nombres `empresa1.com` y `empresa2.com` resuelvan a `localhost` (`127.0.0.1`), evitando que salgan a resolverse a un servidor DNS de un proveedor de internet.
+
+Con el ping, simplemente verificamos que al preguntar por `empresa1.com` efectivamente responde nuestra propia máquina virtual local, y no un servidor remoto en internet.
+
+![](capturas/2/2-2-hosts.jpg)
+
+
+
+## 2.4 Estado inicial del sistema 
+
+(capturas del estado "antes" según lo indicado en el enunciado de
 cada TP)
 
 # SECCIÓN 3 - Seguridad en HTTPS, Certificados y Autoridad Certificante
@@ -146,4 +175,6 @@ sudo apt-get install php libapache2-mod-php php-mysql -y
 Resultado de la ejecución: [3-2-3-1.txt](capturas/3/3-2-3-1.txt)
 
 ### 3.2.4 Prueba de PHP
+Se crea un archivo info.php dentro del vhost de empresa 1
 
+![3-2-4-1.jpg](capturas/3/3-2-4-1.jpg)
