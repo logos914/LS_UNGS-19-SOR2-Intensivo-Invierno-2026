@@ -46,3 +46,36 @@ Tabla de distribución:
 
 ## 2.4 Estado inicial del sistema (capturas del estado "antes" según lo indicado en el enunciado de
 cada TP)
+
+# SECCIÓN 3 - Seguridad en HTTPS, Certificados y Autoridad Certificante
+
+## 3.1 Primera Parte: Instalación de Servidor LAMP
+
+### 3.1.1 Instalación de apache
+
+Se instaló el servidor web Apache con
+```bash
+sudo apt-get install apache2 -y > archivo.txt
+```
+
+[Salida de Instalación de Apache](capturas/3/3-1-1.txt)
+
+
+### 3.1.2 Configuración de Apache
+
+Se revisó el contenido de los archivos de configuración
+
+- `/etc/apache/apache2.conf` 
+- `/etc/apache/ports.conf` 
+
+![apache2.conf](capturas/3/3-1-2-1.jpg)
+Contenido de: [apache2.conf](capturas/3/apache2.conf)
+
+![apache2.conf](capturas/3/3-1-2-2.jpg)
+Contenido de: [ports.conf](capturas/3/ports.conf)
+
+### 3.1.3 Configuración de sitios virtuales
+
+Se ejecutaron los siguientes comandos para crear las carpetas de los virtual hosts 
+
+![Virtual Hosts](capturas/3/3-1-3-1.jpg)
