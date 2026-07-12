@@ -1,0 +1,87 @@
+Leyendo lista de paquetes...
+Creando árbol de dependencias...
+Leyendo la información de estado...
+Se instalarán los siguientes paquetes adicionales:
+  apache2-bin apache2-data apache2-utils libapr1 libaprutil1
+  libaprutil1-dbd-sqlite3 libaprutil1-ldap
+Paquetes sugeridos:
+  apache2-doc apache2-suexec-pristine | apache2-suexec-custom
+Se instalarán los siguientes paquetes NUEVOS:
+  apache2 apache2-bin apache2-data apache2-utils libapr1 libaprutil1
+  libaprutil1-dbd-sqlite3 libaprutil1-ldap
+0 actualizados, 8 nuevos se instalarán, 0 para eliminar y 142 no actualizados.
+Se necesita descargar 1.723 kB de archivos.
+Se utilizarán 7.535 kB de espacio de disco adicional después de esta operación.
+Des:1 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libapr1 amd64 1.6.5-1ubuntu1.1 [91,5 kB]
+Des:2 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libaprutil1 amd64 1.6.1-4ubuntu2.2 [85,1 kB]
+Des:3 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libaprutil1-dbd-sqlite3 amd64 1.6.1-4ubuntu2.2 [10,5 kB]
+Des:4 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libaprutil1-ldap amd64 1.6.1-4ubuntu2.2 [8.752 B]
+Des:5 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 apache2-bin amd64 2.4.41-4ubuntu3.23 [1.188 kB]
+Des:6 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 apache2-data all 2.4.41-4ubuntu3.23 [159 kB]
+Des:7 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 apache2-utils amd64 2.4.41-4ubuntu3.23 [84,4 kB]
+Des:8 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 apache2 amd64 2.4.41-4ubuntu3.23 [95,6 kB]
+Descargados 1.723 kB en 2s (706 kB/s)
+Seleccionando el paquete libapr1:amd64 previamente no seleccionado.
+(Leyendo la base de datos ... (Leyendo la base de datos ... 5%(Leyendo la base de datos ... 10%(Leyendo la base de datos ... 15%(Leyendo la base de datos ... 20%(Leyendo la base de datos ... 25%(Leyendo la base de datos ... 30%(Leyendo la base de datos ... 35%(Leyendo la base de datos ... 40%(Leyendo la base de datos ... 45%(Leyendo la base de datos ... 50%(Leyendo la base de datos ... 55%(Leyendo la base de datos ... 60%(Leyendo la base de datos ... 65%(Leyendo la base de datos ... 70%(Leyendo la base de datos ... 75%(Leyendo la base de datos ... 80%(Leyendo la base de datos ... 85%(Leyendo la base de datos ... 90%(Leyendo la base de datos ... 95%(Leyendo la base de datos ... 100%(Leyendo la base de datos ... 264557 ficheros o directorios instalados actualmente.)
+Preparando para desempaquetar .../0-libapr1_1.6.5-1ubuntu1.1_amd64.deb ...
+Desempaquetando libapr1:amd64 (1.6.5-1ubuntu1.1) ...
+Seleccionando el paquete libaprutil1:amd64 previamente no seleccionado.
+Preparando para desempaquetar .../1-libaprutil1_1.6.1-4ubuntu2.2_amd64.deb ...
+Desempaquetando libaprutil1:amd64 (1.6.1-4ubuntu2.2) ...
+Seleccionando el paquete libaprutil1-dbd-sqlite3:amd64 previamente no seleccionado.
+Preparando para desempaquetar .../2-libaprutil1-dbd-sqlite3_1.6.1-4ubuntu2.2_amd64.deb ...
+Desempaquetando libaprutil1-dbd-sqlite3:amd64 (1.6.1-4ubuntu2.2) ...
+Seleccionando el paquete libaprutil1-ldap:amd64 previamente no seleccionado.
+Preparando para desempaquetar .../3-libaprutil1-ldap_1.6.1-4ubuntu2.2_amd64.deb ...
+Desempaquetando libaprutil1-ldap:amd64 (1.6.1-4ubuntu2.2) ...
+Seleccionando el paquete apache2-bin previamente no seleccionado.
+Preparando para desempaquetar .../4-apache2-bin_2.4.41-4ubuntu3.23_amd64.deb ...
+Desempaquetando apache2-bin (2.4.41-4ubuntu3.23) ...
+Seleccionando el paquete apache2-data previamente no seleccionado.
+Preparando para desempaquetar .../5-apache2-data_2.4.41-4ubuntu3.23_all.deb ...
+Desempaquetando apache2-data (2.4.41-4ubuntu3.23) ...
+Seleccionando el paquete apache2-utils previamente no seleccionado.
+Preparando para desempaquetar .../6-apache2-utils_2.4.41-4ubuntu3.23_amd64.deb ...
+Desempaquetando apache2-utils (2.4.41-4ubuntu3.23) ...
+Seleccionando el paquete apache2 previamente no seleccionado.
+Preparando para desempaquetar .../7-apache2_2.4.41-4ubuntu3.23_amd64.deb ...
+Desempaquetando apache2 (2.4.41-4ubuntu3.23) ...
+Configurando libapr1:amd64 (1.6.5-1ubuntu1.1) ...
+Configurando apache2-data (2.4.41-4ubuntu3.23) ...
+Configurando libaprutil1:amd64 (1.6.1-4ubuntu2.2) ...
+Configurando libaprutil1-ldap:amd64 (1.6.1-4ubuntu2.2) ...
+Configurando libaprutil1-dbd-sqlite3:amd64 (1.6.1-4ubuntu2.2) ...
+Configurando apache2-utils (2.4.41-4ubuntu3.23) ...
+Configurando apache2-bin (2.4.41-4ubuntu3.23) ...
+Configurando apache2 (2.4.41-4ubuntu3.23) ...
+Enabling module mpm_event.
+Enabling module authz_core.
+Enabling module authz_host.
+Enabling module authn_core.
+Enabling module auth_basic.
+Enabling module access_compat.
+Enabling module authn_file.
+Enabling module authz_user.
+Enabling module alias.
+Enabling module dir.
+Enabling module autoindex.
+Enabling module env.
+Enabling module mime.
+Enabling module negotiation.
+Enabling module setenvif.
+Enabling module filter.
+Enabling module deflate.
+Enabling module status.
+Enabling module reqtimeout.
+Enabling conf charset.
+Enabling conf localized-error-pages.
+Enabling conf other-vhosts-access-log.
+Enabling conf security.
+Enabling conf serve-cgi-bin.
+Enabling site 000-default.
+Created symlink /etc/systemd/system/multi-user.target.wants/apache2.service → /lib/systemd/system/apache2.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/apache-htcacheclean.service → /lib/systemd/system/apache-htcacheclean.service.
+Procesando disparadores para ufw (0.36-6) ...
+Procesando disparadores para systemd (245.4-4ubuntu3.20) ...
+Procesando disparadores para man-db (2.9.1-1) ...
+Procesando disparadores para libc-bin (2.31-0ubuntu9.18) ...
