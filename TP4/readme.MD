@@ -84,3 +84,11 @@ Se crearon archivos index.html para cada empresa. Cada uno en su respectivo `/va
 
 - Empresa 1: [index.html](capturas/3/empresa1/index.html)
 - Empresa 2: [index.html](capturas/3/empresa2/index.html)
+
+Se crearon los achivos de configuración en Apache para cada empresa
+
+![](capturas/3/3-1-4-1.jpg)
+
+Archivos de configuración:
+- Empresa 1: [empresa1.com.conf](capturas/3/empresa1/empresa1.com.conf)
+- Empresa 2: [empresa2.com.conf](capturas/3/empresa2/empresa2.com.conf)
