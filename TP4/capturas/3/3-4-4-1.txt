@@ -1,0 +1,71 @@
+Script started on 2026-07-12 15:49:17-03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="169" LINES="36"]
+]0;alumno@alumno-virtualbox: ~/sor2/TP4/capturas/3[01;32malumno@alumno-virtualbox[00m:[01;34m~/sor2/TP4/capturas/3[00m$ cat /etc/apache2/sites-available/secure-site.conf 
+<VirtualHost *:443>
+ ServerName secure-example.com
+ DocumentRoot /var/www/secure_example/public_html
+ SSLEngine on
+SSLCertificateFile /etc/ssl/certs/selfsigned.crt
+SSLCertificateKeyFile /etc/ssl/private/selfsigned.key
+SSLProtocol all -SSLv3 -TLSv1 -TLSv1.1
+SSLCipherSuite HIGH:!aNULL:!MD5
+Header always set Strict-Transport-Security "max-age=3153600 >>>  includeSubDomains"
+<Directory /var/www/secure_example/public_html>
+ Options Indexes FollowSymLinks
+ AllowOverride All
+ Require all granted
+ </Directory>
+ ErrorLog ${APACHE_LOG_DIR}/error.log
+ CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+]0;alumno@alumno-virtualbox: ~/sor2/TP4/capturas/3[01;32malumno@alumno-virtualbox[00m:[01;34m~/sor2/TP4/capturas/3[00m$ sudo systemctl restart apache2
+[sudo] contraseña para alumno: 
+Job for apache2.service failed because the control process exited with error code.
+See "systemctl status apache2.service" and "journalctl -xe" for details.
+]0;alumno@alumno-virtualbox: ~/sor2/TP4/capturas/3[01;32malumno@alumno-virtualbox[00m:[01;34m~/sor2/TP4/capturas/3[00m$ systemctl status apache2.service
+[?1h=[0;1;31m●[0m apache2.service - The Apache HTTP Server[m
+     Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor preset: enabled)[m
+     Active: [0;1;31mfailed[0m (Result: exit-code) since Sun 2026-07-12 15:49:41 -03; 6s ago[m
+       Docs: https://httpd.apache.org/docs/2.4/[m
+    Process: 14145 ExecStart=/usr/sbin/apachectl start [0;1;31m(code=exited, status=1/FAILURE)[0m[m
+[m
+jul 12 15:49:41 alumno-virtualbox systemd[1]: Starting The Apache HTTP Server...[m
+jul 12 15:49:41 alumno-virtualbox apachectl[14161]: AH00526: Syntax error on line 9 of /etc/apache2/sites-enabled/secure-site.conf:[m
+jul 12 15:49:41 alumno-virtualbox apachectl[14161]: Invalid command 'Header', perhaps misspelled or defined by a module not included in the server configuration[m
+jul 12 15:49:41 alumno-virtualbox apachectl[14145]: Action 'start' failed.[m
+jul 12 15:49:41 alumno-virtualbox apachectl[14145]: The Apache error log may have more information.[m
+jul 12 15:49:41 alumno-virtualbox systemd[1]: [0;1;39m[0;1;31m[0;1;39mapache2.service: Control process exited, code=exited, status=1/FAILURE[0m[m
+jul 12 15:49:41 alumno-virtualbox systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185mapache2.service: Failed with result 'exit-code'.[0m[m
+jul 12 15:49:41 alumno-virtualbox systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start The Apache HTTP Server.[0m[m
+[K[?1l>]0;alumno@alumno-virtualbox: ~/sor2/TP4/capturas/3[01;32malumno@alumno-virtualbox[00m:[01;34m~/sor2/TP4/capturas/3[00m$ sudo a2enmod headers
+Enabling module headers.
+To activate the new configuration, you need to run:
+  systemctl restart apache2
+]0;alumno@alumno-virtualbox: ~/sor2/TP4/capturas/3[01;32malumno@alumno-virtualbox[00m:[01;34m~/sor2/TP4/capturas/3[00m$ systemctl restart apache2
+Failed to restart apache2.service: Access denied
+See system logs and 'systemctl status apache2.service' for details.
+]0;alumno@alumno-virtualbox: ~/sor2/TP4/capturas/3[01;32malumno@alumno-virtualbox[00m:[01;34m~/sor2/TP4/capturas/3[00m$ sudo systemctl restart apache2
+]0;alumno@alumno-virtualbox: ~/sor2/TP4/capturas/3[01;32malumno@alumno-virtualbox[00m:[01;34m~/sor2/TP4/capturas/3[00m$ sudo systemctl restart apache2[Ksystemctl status apache2.service
+[?1h=[0;1;32m●[0m apache2.service - The Apache HTTP Server[m
+     Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor preset: enabled)[m
+     Active: [0;1;32mactive (running)[0m since Sun 2026-07-12 15:50:09 -03; 14s ago[m
+       Docs: https://httpd.apache.org/docs/2.4/[m
+    Process: 14218 ExecStart=/usr/sbin/apachectl start (code=exited, status=0/SUCCESS)[m
+   Main PID: 14236 (apache2)[m
+      Tasks: 6 (limit: 4583)[m
+     Memory: 11.0M[m
+     CGroup: /system.slice/apache2.service[m
+             ├─14236 /usr/sbin/apache2 -k start[m
+             ├─14237 /usr/sbin/apache2 -k start[m
+             ├─14238 /usr/sbin/apache2 -k start[m
+             ├─14239 /usr/sbin/apache2 -k start[m
+             ├─14240 /usr/sbin/apache2 -k start[m
+             └─14241 /usr/sbin/apache2 -k start[m
+[m
+jul 12 15:50:09 alumno-virtualbox systemd[1]: Starting The Apache HTTP Server...[m
+jul 12 15:50:09 alumno-virtualbox apachectl[14235]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'S[m[7m>[27m
+jul 12 15:50:09 alumno-virtualbox systemd[1]: Started The Apache HTTP Server.[m
+[7mlines 1-19/19 (END)[27m[K[K[?1l>]0;alumno@alumno-virtualbox: ~/sor2/TP4/capturas/3[01;32malumno@alumno-virtualbox[00m:[01;34m~/sor2/TP4/capturas/3[00m$ exit
+exit
+
+Script done on 2026-07-12 15:50:27-03:00 [COMMAND_EXIT_CODE="0"]
