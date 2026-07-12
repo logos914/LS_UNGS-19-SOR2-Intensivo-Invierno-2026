@@ -46,3 +46,15 @@ Tabla de distribución:
 
 ## 2.4 Estado inicial del sistema (capturas del estado "antes" según lo indicado en el enunciado de
 cada TP)
+
+# SECCIÓN 3 - Seguridad en HTTPS, Certificados y Autoridad Certificante
+
+## 3.1 Primera Parte: Instalación de Servidor LAMP
+
+### 3.1.2 Instalación de apache
+
+Se instaló el servidor web Apache con
+```bash
+sudo apt-get install apache2 -y > archivo.txt
+```
+
