@@ -1,1 +1,1 @@
-V	270712203923Z		1000	unknown	/C=AR/ST=Buenos Aires/O=Seguritas/CN=carol/emailAddress=carol@falsa.com
+R	270712203923Z	260712233122Z	1000	unknown	/C=AR/ST=Buenos Aires/O=Seguritas/CN=carol/emailAddress=carol@falsa.com
