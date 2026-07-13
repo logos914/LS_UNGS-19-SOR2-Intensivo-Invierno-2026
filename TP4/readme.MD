@@ -16,18 +16,19 @@ Intensivo Invierno 2026
 
 
 
-# SECCIÓN 1 — Introducción (½ página)
+# SECCIÓN 1 — Introducción
 
 ## 1.1 Contexto y objetivo del trabajo
-@todo
+El presente trabajo práctico tiene como objetivo principal la implementación, configuración y securización de un entorno de servidores web. A través de la virtualización, se busca comprender de manera práctica el funcionamiento del stack LAMP (Linux, Apache, MySQL, PHP), el despliegue de un CMS (WordPress) y, de manera crítica, la aplicación de protocolos de seguridad en redes. Esto incluye la configuración de conexiones seguras mediante HTTPS, la creación de una Autoridad Certificadora (CA) propia, la firma y revocación de certificados (CRL), y la autenticación de clientes frente al servidor mediante certificados SSL.
+
 ## 1.2 Distribución de tareas entre integrantes
-@todo
+
 
 Tabla de distribución:
 |*Integrante* | *Tarea a Cargo* |
 | ------------- | ------------- |
-| David Cañete | @todo | 
-| Ignacio Tula | @todo | 
+| David Cañete | - Configuración inicial del entorno y redacción de Secciones 1 y 2.<br>- Instalación de pila LAMP, configuración de Virtual Hosts y MySQL (Sec. 3.1 y 3.2).<br>- Despliegue del CMS WordPress (Sec. 3.3).<br>- Configuración del cliente web (Firefox) para autenticación PKCS12 (Sec 4.5).<br>- Consolidación del informe final y revisión de formato. | 
+| Ignacio Tula | - Configuración de HTTPS, cifrado y módulos de seguridad en Apache (Sec. 3.4).<br>- Creación y gestión de la Autoridad Certificadora (CA) local (Sec 4.1 y 4.2).<br>- Generación y firma de CSR para autenticación asimétrica (Sec 4.3 y 4.4).<br>- Gestión de Listas de Revocación (CRL) y endurecimiento del servidor (Sec 4.6).<br>- Revisión técnica cruzada de comandos y logs del sistema. | 
 
 
 # SECCIÓN 2 — Entorno de Trabajo
@@ -430,4 +431,167 @@ Es la llave privada de la Autoridad Certificadora. Como su nombre indica y al es
 
 Es el certificado público (autofirmado) de la CA. Este archivo es público y es el que los navegadores usarán para confiar en los certificados que firme la CA.
 
-## 4.3 
+## 4.3 Firma de una Solicitud de Certificado
+
+Vamos a simular todo dentro de la misma máquina virtual para simplificar.
+
+```bash
+mkdir llaves
+cd llaves
+openssl genpkey -algorithm RSA -out carol-key.pem
+openssl req -new -key carol-key.pem -out carol-req.pem
+```
+
+![](capturas/4/4-3-1.jpg)
+
+Desde la entidad certificadora ejecutamos
+
+```bash
+cp carol-req.pem ../
+cd ..
+openssl ca -config CA/ca.conf -out carol-cert.pem -infiles carol-req.pem
+```
+
+![](capturas/4/4-3-2.jpg)
+
+En estos últimos dos pasos, hemos representado a una usuaria, de nombre "Carol". Y hemos creado su llave privada y su solicitud. 
+
+Luego, en el servidor, hemos "recibido" la solicitud de Carol, y la hemos firmado.
+
+### 4.4 reflexiones sobre la firma
+El certificado de Carol se almacena en dos lugares. Una copia se la entregamos a Carol (llaves/carol-cert.pem) y la CA guardó automáticamente una copia de respaldo en su base de datos, en la carpeta CA/newcerts/1000.pem. Además, se registró en el archivo CA/index.txt
+
+La llave privada (carol-key.pem) siempre se quedó en la carpeta de Carol (llaves/). La Autoridad Certificadora nunca vio ni debe ver la llave privada del cliente. Este es el principio básico de la criptografía asimétrica.
+
+Para ver la identidad del CA, explorando el certificado de Carol, ejecutando
+```bash
+ openssl x509 -in llaves/carol-cert.pem -noout -text 
+``` 
+
+![](capturas/4/4-4-1.jpg)
+
+Se puede observa la identidad de la CA en el campo `Issuer`: (Emisor). 
+Mientras que el campo `Subject` corresponde a Carol.
+
+## 4.5 Autenticación de Clientes en Apache con SSL
+
+### 4.5.1 En el servidor
+
+Configuramos en Apache el archivo `default-ssl.conf`
+Donde agregamos la línea que nos indican, pero también notamos que en ningún momento indicamos el path de la CA. Configuramos utilizando con el path creado al principio de esta misma sección.
+
+
+```
+SSLCACertificateFile /home/alumno/sor2/TP4/capturas/4/CA/cacert.pem
+SSLVerifyClient require
+```
+
+![](capturas/4/4-5-1.jpg)
+
+Reiniciamos Apache
+```bash
+sudo systemctl restart apache2
+```
+
+### 4.5.2 En el cliente
+
+Convertimos la clave a formato PKCS12
+```bash
+openssl pkcs12 -export -in carol-cert.pem -inkey carol-key.pem -out carol.p12
+```
+![](capturas/4/4-5-2-1.jpg)
+
+Abrimos Firefox, y nos dirigimos a la configuración. En el apartado de Privacidad y Seguridad, vamos a la sección de Certificados.
+
+![](capturas/4/4-5-2-2.jpg)
+
+En mis certificados, elegimos importar y luego elegimos el archivo p12 que creamos recientemente
+
+![](capturas/4/4-5-2-3.jpg)
+
+Este es un ejemplo, del mensaje de error si se intenta abrir el sitio, sin ningún certificado importado
+
+![](capturas/4/4-5-2-4.jpg)
+
+Por el contrario, al abrir el sitio web con los certificados cargados. Pregunta por cuál usar.
+
+![](capturas/4/4-5-2-5.jpg)
+
+Y luego se puede acceder
+
+![](capturas/4/4-5-2-6.jpg)
+
+
+## 4.6 Revocación de certificados
+
+### 4.6.1 Creación de una CRL
+
+```bash
+mkdir CA/crl
+echo 1000 > CA/crlnumber
+openssl ca -config CA/ca.conf -gencrl -out CA/crl.pem
+```
+
+![](capturas/4/4-6-1.jpg)
+
+
+Aquí notamos que fue necesario ingresar la clave privada porque al firmar con la misma, cualquier cliente o servidor puede usar el certificado público de la CA (cacert.pem) para verificar matemáticamente que la lista de revocación fue emitida por la autoridad legítima y no ha sido alterada.
+
+Si la CRL no estuviera firmada, un atacante podría crear una CRL falsa y revocar certificados válidos o permitir certificados comprometidos.
+
+
+### 4.6.2 Análisis de la CRL
+
+Ejecutamos
+
+```bash
+openssl crl -in CA/crl.pem -noout -text
+```
+
+![](capturas/4/4-6-2.jpg)
+
+Observamos los siguientes campos
+`Issuer`: Datos de la CA (País, Estado, Organización). Es decir quien emite la lista.
+
+`Last Update / Next Update`: Muestra cuándo se generó esta lista y cuándo expira.
+
+`Revoked Certificates`: Como esta es la CRL Inicial, todavía no hay certificados revocados.
+
+### 4.6.3 Revocación
+
+Vamos a revocar el certificado de Carol con
+
+```bash
+openssl ca -config CA/ca.conf -revoke CA/newcerts/1000.pem
+```
+
+![](capturas/4/4-6-3.jpg)
+
+Observamos que el `index.txt` ahora indica una `R` (de revocado) en la entrada de Carol
+
+
+Al analizar nuevamente crl.pem con
+
+```bash
+openssl crl -in CA/crl.pem -noout -text
+```
+
+![](capturas/4/4-6-3-b.jpg)
+
+Observamos ahora que hay contenido en `Revoked Certificates`
+
+### 4.6.4 Publicación de una CRL Actualizada
+![](capturas/4/4-6-4.jpg)
+
+### 4.6.5 
+
+![](capturas/4/4-6-5.jpg)
+
+### 4.6.6 Configuración de Apache con CRL
+Agregamos en los virtual hosts las directivas `SSLCARevocationFile` y `SSLCARevocationCheck`
+
+![](capturas/4/4-6-6.jpg)
+
+Entonces luego, al volver a entra con el navegador, obtenemos el siguiente mensaje de error
+
+![](capturas/4/4-6-7.jpg)
